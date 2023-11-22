@@ -1,0 +1,7 @@
+2023-11-17 20:56:41,432 INFO  [DBLogger] Log4j initialized. Log file path: C:\Users\Utente\IdeaProjects\DatabaseConnection\src\main\webapp\logs\dbConnectionLogs.txt
+2023-11-17 20:58:14,207 INFO  [UserServlet] Displaying users list.
+2023-11-17 20:59:19,917 INFO  [AddUserServlet] Added user 
+User -> [id=null, name=Silvio, surname=Di Silvestro, phone=3772837210, email=silvio@gmail.com, age=72] successfully.
+2023-11-17 20:59:20,049 INFO  [UserServlet] Displaying users list.
+2023-11-21 18:04:39,360 INFO  [DBLogger] Log4j initialized. Log file path: C:\Users\Utente\IdeaProjects\DatabaseConnection\src\main\webapp\logs\dbConnectionLogs.txt
+2023-11-21 18:04:48,916 INFO  [UserServlet] Displaying users list.
