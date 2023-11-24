@@ -1,14 +1,80 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <title>Welcome to My Web Application</title>
-</head>
-<body>
-    <h1>User database connection Welcome Page.</h1>
-    <p>Select an action</p>
-    <a href="/DatabaseConnection/userList" style="display: inline-block; padding: 10px 20px; background-color: #4CAF50; color: white; text-decoration: none; border-radius: 5px;">View User List</a>
-    <a href="/DatabaseConnection/addUser" style="display: inline-block; padding: 10px 20px; background-color: #4CAF50; color: white; text-decoration: none; border-radius: 5px;">Add User</a>
-    <a href="/DatabaseConnection/searchUser" style="display: inline-block; padding: 10px 20px; background-color: #4CAF50; color: white; text-decoration: none; border-radius: 5px;">Modify User</a>
-    <a href="/DatabaseConnection/searchUser" style="display: inline-block; padding: 10px 20px; background-color: #4CAF50; color: white; text-decoration: none; border-radius: 5px;">Delete User</a>
-</body>
+    <head>
+        <title>Web app index page</title>
+        <style>
+            body {
+                font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+                background-color: black !important;
+                color: white !important;
+                margin: 0;
+                padding: 0;
+                text-align: center; /* Center align text content */
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                justify-content: center;
+                height: 100vh;
+            }
+            header {
+                background-color: black;
+                padding: 20px;
+                text-align: center;
+            }
+            h1 {
+                font-size: 22px; /* Increase font size for emphasis */
+                color: #ff9900; /* Use a cool color, you can choose any color you like */
+                text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5); /* Add a subtle text shadow */
+                letter-spacing: 1px; /* Increase letter spacing for a modern look */
+                margin-bottom: 20px; /* Add some space below the heading */
+                font-weight: bold; /* Make the text bold */
+                font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; /* Choose a modern font */
+            }
+            p {
+                font-size: 15px; /* Increase font size for emphasis */
+                color: white;
+                text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5); /* Add a subtle text shadow */
+                letter-spacing: 1px; /* Increase letter spacing for a modern look */
+                margin-bottom: 20px; /* Add some space below the heading */
+                font-weight: bold; /* Make the text bold */
+                font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; /* Choose a modern font */
+            }
+
+            .button-container {
+                display: flex;
+                justify-content: center; /* Center align buttons horizontally */
+                flex-wrap: wrap; /* Allow buttons to wrap to the next line if needed */
+                margin-top: 20px; /* Adjust as needed */
+            }
+
+            a.button {
+                display: inline-block;
+                background-color: #4caf50;
+                color: white;
+                padding: 12px 12px;
+                border: none;
+                border-radius: 6px;
+                cursor: pointer;
+                margin: 4px; /* Add margin for spacing between buttons */
+                text-decoration: none; /* Remove underline */
+            }
+
+            a.button:hover {
+                background-color: #28752a;
+            }
+
+        </style>
+    </head>
+    <body>
+        <header>
+            <h1>Web App index</h1>
+            <p>Choose an action</p>
+        </header>
+        <div class="button-container">
+            <a href="/DatabaseConnection/userList" class="button">View User List</a>
+            <a href="/DatabaseConnection/addUser" class="button">Add User</a>
+            <a href="/DatabaseConnection/searchUser" class="button">Modify User</a>
+            <a href="/DatabaseConnection/searchUser" class="button">Delete User</a>
+        </div>
+    </body>
 </html>

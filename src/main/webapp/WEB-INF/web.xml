@@ -2,8 +2,10 @@
 <web-app xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="https://jakarta.ee/xml/ns/jakartaee" xsi:schemaLocation="https://jakarta.ee/xml/ns/jakartaee https://jakarta.ee/xml/ns/jakartaee/web-app_5_0.xsd" id="WebApp_ID" version="5.0">
   <display-name>DatabaseConnection</display-name>
   <welcome-file-list>
-    <welcome-file>index.html</welcome-file>
+    <welcome-file>login.html</welcome-file>
   </welcome-file-list>
+
+  <!-- Servlet name and classes -->
   <servlet>
     <servlet-name>UserServlet</servlet-name>
     <servlet-class>servlets.UserServlet</servlet-class>
@@ -24,6 +26,16 @@
     <servlet-name>SearchUserServlet</servlet-name>
     <servlet-class>servlets.SearchUserServlet</servlet-class>
   </servlet>
+  <servlet>
+    <servlet-name>LoginServlet</servlet-name>
+    <servlet-class>servlets.LoginServlet</servlet-class>
+  </servlet>
+  <servlet>
+    <servlet-name>IndexServlet</servlet-name>
+    <servlet-class>servlets.IndexServlet</servlet-class>
+  </servlet>
+
+  <!-- Servlet mappings -->
   <servlet-mapping>
     <servlet-name>UserServlet</servlet-name>
     <url-pattern>/userList</url-pattern>
@@ -44,6 +56,16 @@
     <servlet-name>SearchUserServlet</servlet-name>
     <url-pattern>/searchUser</url-pattern>
   </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>LoginServlet</servlet-name>
+    <url-pattern>/login</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>IndexServlet</servlet-name>
+    <url-pattern>/index</url-pattern>
+  </servlet-mapping>
+
+  <!-- Logger Listener -->
   <listener>
     <listener-class>logger.DBLogger</listener-class>
   </listener>

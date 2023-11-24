@@ -89,20 +89,36 @@ public class User {
         return null;
     }
 
-    public static boolean modifyUser(User modifiedUser) {
+    public static boolean modifyUser(Integer foundUserId, User modifiedUser) {
         try (Connection connection = DatabaseConn.getConnection();
              PreparedStatement preparedStatement = connection.prepareStatement(
                      "update users set name=?, surname=?, phone=?, email=?, age=? where id=?")) {
-
             preparedStatement.setString(1, modifiedUser.getName());
             preparedStatement.setString(2, modifiedUser.getSurname());
             preparedStatement.setString(3, modifiedUser.getPhone());
             preparedStatement.setString(4, modifiedUser.getEmail());
             preparedStatement.setInt(5, modifiedUser.getAge());
-            preparedStatement.setInt(6, modifiedUser.getId());
+            preparedStatement.setInt(6, foundUserId);
 
             int rowsAffected = preparedStatement.executeUpdate();
 
+            return rowsAffected > 0;
+        } catch (SQLException e) {
+            e.printStackTrace();
+            logger.error("Error connecting to database.", e);
+        }
+        return false;
+    }
+    public static boolean modifyUser(User modifiedUser) {
+        try (Connection connection = DatabaseConn.getConnection();
+             PreparedStatement preparedStatement = connection.prepareStatement(
+                     "update users set name=?, surname=?, phone=?, email=?, age=? where id=?")) {
+            preparedStatement.setString(1, modifiedUser.getName());
+            preparedStatement.setString(2, modifiedUser.getSurname());
+            preparedStatement.setString(3, modifiedUser.getPhone());
+            preparedStatement.setString(4, modifiedUser.getEmail());
+            preparedStatement.setInt(5, modifiedUser.getAge());
+            int rowsAffected = preparedStatement.executeUpdate();
             return rowsAffected > 0;
         } catch (SQLException e) {
             e.printStackTrace();

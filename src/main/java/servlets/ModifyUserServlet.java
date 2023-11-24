@@ -45,22 +45,17 @@ public class ModifyUserServlet extends HttpServlet{
             String modifiedPhone = request.getParameter("modifiedPhone");
             String modifiedEmail = request.getParameter("modifiedEmail");
             String modifiedAge = request.getParameter("modifiedAge");
-
             User foundUser = (User) request.getAttribute("foundUser");
+            Integer foundUserId = foundUser.getId();
 
-            if (foundUser != null) {
-                foundUser.setName(modifiedName);
-                foundUser.setSurname(modifiedSurname);
-                foundUser.setName(modifiedPhone);
-                foundUser.setEmail(modifiedEmail);
-                foundUser.setAge(Integer.valueOf(modifiedAge));
-                User.modifyUser(foundUser);
-                response.getWriter().println("User updated successfully");
-                logger.info("User {} updated successfully.", foundUser.toString());
-            } else {
-                response.getWriter().println("No user found to update");
-                logger.warn("User not found.");
-            }
+            foundUser.setName(modifiedName);
+            foundUser.setSurname(modifiedSurname);
+            foundUser.setName(modifiedPhone);
+            foundUser.setEmail(modifiedEmail);
+            foundUser.setAge(Integer.valueOf(modifiedAge));
+            User.modifyUser(foundUserId, foundUser);
+            response.getWriter().println("User updated successfully");
+            logger.info("User {} updated successfully.", foundUser);
 
         } else {
             // Default behavior for handling a POST request

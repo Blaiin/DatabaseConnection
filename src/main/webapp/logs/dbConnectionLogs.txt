@@ -5,3 +5,184 @@ User -> [id=null, name=Silvio, surname=Di Silvestro, phone=3772837210, email=sil
 2023-11-17 20:59:20,049 INFO  [UserServlet] Displaying users list.
 2023-11-21 18:04:39,360 INFO  [DBLogger] Log4j initialized. Log file path: C:\Users\Utente\IdeaProjects\DatabaseConnection\src\main\webapp\logs\dbConnectionLogs.txt
 2023-11-21 18:04:48,916 INFO  [UserServlet] Displaying users list.
+2023-11-22 18:34:31,999 INFO  [DBLogger] Log4j initialized. Log file path: C:\Users\Utente\IdeaProjects\DatabaseConnection\src\main\webapp\logs\dbConnectionLogs.txt
+2023-11-22 18:50:43,384 INFO  [DBLogger] Log4j initialized. Log file path: C:\Users\Utente\IdeaProjects\DatabaseConnection\src\main\webapp\logs\dbConnectionLogs.txt
+2023-11-22 18:53:18,029 INFO  [DBLogger] Log4j initialized. Log file path: C:\Users\Utente\IdeaProjects\DatabaseConnection\src\main\webapp\logs\dbConnectionLogs.txt
+2023-11-22 18:56:49,798 INFO  [DBLogger] Log4j initialized. Log file path: C:\Users\Utente\IdeaProjects\DatabaseConnection\src\main\webapp\logs\dbConnectionLogs.txt
+2023-11-22 18:59:44,199 INFO  [DBLogger] Log4j initialized. Log file path: C:\Users\Utente\IdeaProjects\DatabaseConnection\src\main\webapp\logs\dbConnectionLogs.txt
+2023-11-22 19:00:57,440 INFO  [DBLogger] Log4j initialized. Log file path: C:\Users\Utente\IdeaProjects\DatabaseConnection\src\main\webapp\logs\dbConnectionLogs.txt
+2023-11-22 19:04:38,450 INFO  [DBLogger] Log4j initialized. Log file path: C:\Users\Utente\IdeaProjects\DatabaseConnection\src\main\webapp\logs\dbConnectionLogs.txt
+2023-11-22 19:11:01,595 INFO  [DBLogger] Log4j initialized. Log file path: C:\Users\Utente\IdeaProjects\DatabaseConnection\src\main\webapp\logs\dbConnectionLogs.txt
+2023-11-22 19:13:11,901 INFO  [DBLogger] Log4j initialized. Log file path: C:\Users\Utente\IdeaProjects\DatabaseConnection\src\main\webapp\logs\dbConnectionLogs.txt
+2023-11-22 19:50:48,652 INFO  [DBLogger] Log4j initialized. Log file path: C:\Users\Utente\IdeaProjects\DatabaseConnection\src\main\webapp\logs\dbConnectionLogs.txt
+2023-11-22 19:51:10,495 INFO  [DBLogger] Log4j initialized. Log file path: C:\Users\Utente\IdeaProjects\DatabaseConnection\src\main\webapp\logs\dbConnectionLogs.txt
+2023-11-22 19:53:16,346 INFO  [DBLogger] Log4j initialized. Log file path: C:\Users\Utente\IdeaProjects\DatabaseConnection\src\main\webapp\logs\dbConnectionLogs.txt
+2023-11-24 14:43:31,537 INFO  [DBLogger] Log4j initialized. Log file path: C:\Users\Utente\IdeaProjects\DatabaseConnection\src\main\webapp\logs\dbConnectionLogs.txt
+2023-11-24 14:48:32,774 INFO  [DBLogger] Log4j initialized. Log file path: C:\Users\Utente\IdeaProjects\DatabaseConnection\src\main\webapp\logs\dbConnectionLogs.txt
+2023-11-24 14:52:01,553 INFO  [DBLogger] Log4j initialized. Log file path: C:\Users\Utente\IdeaProjects\DatabaseConnection\src\main\webapp\logs\dbConnectionLogs.txt
+2023-11-24 14:55:37,542 INFO  [DBLogger] Log4j initialized. Log file path: C:\Users\Utente\IdeaProjects\DatabaseConnection\src\main\webapp\logs\dbConnectionLogs.txt
+2023-11-24 14:59:29,628 INFO  [DBLogger] Log4j initialized. Log file path: C:\Users\Utente\IdeaProjects\DatabaseConnection\src\main\webapp\logs\dbConnectionLogs.txt
+2023-11-24 15:02:39,591 INFO  [DBLogger] Log4j initialized. Log file path: C:\Users\Utente\IdeaProjects\DatabaseConnection\src\main\webapp\logs\dbConnectionLogs.txt
+2023-11-24 15:08:20,717 INFO  [DBLogger] Log4j initialized. Log file path: C:\Users\Utente\IdeaProjects\DatabaseConnection\src\main\webapp\logs\dbConnectionLogs.txt
+2023-11-24 15:09:12,625 INFO  [DBLogger] Log4j initialized. Log file path: C:\Users\Utente\IdeaProjects\DatabaseConnection\src\main\webapp\logs\dbConnectionLogs.txt
+2023-11-24 16:08:44,061 INFO  [DBLogger] Log4j initialized. Log file path: C:\Users\Utente\IdeaProjects\DatabaseConnection\src\main\webapp\logs\dbConnectionLogs.txt
+2023-11-24 16:08:56,234 ERROR [LoginServlet] Error connecting to database.
+org.postgresql.util.PSQLException: ERRORE: la relazione "password" non esiste
+  Posizione: 117
+	at org.postgresql.core.v3.QueryExecutorImpl.receiveErrorResponse(QueryExecutorImpl.java:2713) ~[postgresql-42.6.0.jar:42.6.0]
+	at org.postgresql.core.v3.QueryExecutorImpl.processResults(QueryExecutorImpl.java:2401) ~[postgresql-42.6.0.jar:42.6.0]
+	at org.postgresql.core.v3.QueryExecutorImpl.execute(QueryExecutorImpl.java:368) ~[postgresql-42.6.0.jar:42.6.0]
+	at org.postgresql.jdbc.PgStatement.executeInternal(PgStatement.java:498) ~[postgresql-42.6.0.jar:42.6.0]
+	at org.postgresql.jdbc.PgStatement.execute(PgStatement.java:415) ~[postgresql-42.6.0.jar:42.6.0]
+	at org.postgresql.jdbc.PgPreparedStatement.executeWithFlags(PgPreparedStatement.java:190) ~[postgresql-42.6.0.jar:42.6.0]
+	at org.postgresql.jdbc.PgPreparedStatement.executeQuery(PgPreparedStatement.java:134) ~[postgresql-42.6.0.jar:42.6.0]
+	at servlets.LoginServlet.isValidUser(LoginServlet.java:57) [classes/:?]
+	at servlets.LoginServlet.doPost(LoginServlet.java:37) [classes/:?]
+	at jakarta.servlet.http.HttpServlet.service(HttpServlet.java:590) [servlet-api.jar:6.0]
+	at jakarta.servlet.http.HttpServlet.service(HttpServlet.java:658) [servlet-api.jar:6.0]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:205) [catalina.jar:10.1.15]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:149) [catalina.jar:10.1.15]
+	at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:51) [tomcat-websocket.jar:10.1.15]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:174) [catalina.jar:10.1.15]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:149) [catalina.jar:10.1.15]
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:167) [catalina.jar:10.1.15]
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:90) [catalina.jar:10.1.15]
+	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:482) [catalina.jar:10.1.15]
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:115) [catalina.jar:10.1.15]
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:93) [catalina.jar:10.1.15]
+	at org.apache.catalina.valves.AbstractAccessLogValve.invoke(AbstractAccessLogValve.java:673) [catalina.jar:10.1.15]
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:74) [catalina.jar:10.1.15]
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:340) [catalina.jar:10.1.15]
+	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:391) [tomcat-coyote.jar:10.1.15]
+	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:63) [tomcat-coyote.jar:10.1.15]
+	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:896) [tomcat-coyote.jar:10.1.15]
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1744) [tomcat-coyote.jar:10.1.15]
+	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:52) [tomcat-coyote.jar:10.1.15]
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1191) [tomcat-util.jar:10.1.15]
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:659) [tomcat-util.jar:10.1.15]
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61) [tomcat-util.jar:10.1.15]
+	at java.lang.Thread.run(Thread.java:840) [?:?]
+2023-11-24 16:09:25,736 ERROR [LoginServlet] Error connecting to database.
+org.postgresql.util.PSQLException: ERRORE: la relazione "password" non esiste
+  Posizione: 117
+	at org.postgresql.core.v3.QueryExecutorImpl.receiveErrorResponse(QueryExecutorImpl.java:2713) ~[postgresql-42.6.0.jar:42.6.0]
+	at org.postgresql.core.v3.QueryExecutorImpl.processResults(QueryExecutorImpl.java:2401) ~[postgresql-42.6.0.jar:42.6.0]
+	at org.postgresql.core.v3.QueryExecutorImpl.execute(QueryExecutorImpl.java:368) ~[postgresql-42.6.0.jar:42.6.0]
+	at org.postgresql.jdbc.PgStatement.executeInternal(PgStatement.java:498) ~[postgresql-42.6.0.jar:42.6.0]
+	at org.postgresql.jdbc.PgStatement.execute(PgStatement.java:415) ~[postgresql-42.6.0.jar:42.6.0]
+	at org.postgresql.jdbc.PgPreparedStatement.executeWithFlags(PgPreparedStatement.java:190) ~[postgresql-42.6.0.jar:42.6.0]
+	at org.postgresql.jdbc.PgPreparedStatement.executeQuery(PgPreparedStatement.java:134) ~[postgresql-42.6.0.jar:42.6.0]
+	at servlets.LoginServlet.isValidUser(LoginServlet.java:57) [classes/:?]
+	at servlets.LoginServlet.doPost(LoginServlet.java:37) [classes/:?]
+	at jakarta.servlet.http.HttpServlet.service(HttpServlet.java:590) [servlet-api.jar:6.0]
+	at jakarta.servlet.http.HttpServlet.service(HttpServlet.java:658) [servlet-api.jar:6.0]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:205) [catalina.jar:10.1.15]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:149) [catalina.jar:10.1.15]
+	at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:51) [tomcat-websocket.jar:10.1.15]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:174) [catalina.jar:10.1.15]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:149) [catalina.jar:10.1.15]
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:167) [catalina.jar:10.1.15]
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:90) [catalina.jar:10.1.15]
+	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:482) [catalina.jar:10.1.15]
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:115) [catalina.jar:10.1.15]
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:93) [catalina.jar:10.1.15]
+	at org.apache.catalina.valves.AbstractAccessLogValve.invoke(AbstractAccessLogValve.java:673) [catalina.jar:10.1.15]
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:74) [catalina.jar:10.1.15]
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:340) [catalina.jar:10.1.15]
+	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:391) [tomcat-coyote.jar:10.1.15]
+	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:63) [tomcat-coyote.jar:10.1.15]
+	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:896) [tomcat-coyote.jar:10.1.15]
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1744) [tomcat-coyote.jar:10.1.15]
+	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:52) [tomcat-coyote.jar:10.1.15]
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1191) [tomcat-util.jar:10.1.15]
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:659) [tomcat-util.jar:10.1.15]
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61) [tomcat-util.jar:10.1.15]
+	at java.lang.Thread.run(Thread.java:840) [?:?]
+2023-11-24 16:10:54,252 INFO  [DBLogger] Log4j initialized. Log file path: C:\Users\Utente\IdeaProjects\DatabaseConnection\src\main\webapp\logs\dbConnectionLogs.txt
+2023-11-24 16:11:03,316 ERROR [LoginServlet] Error connecting to database.
+org.postgresql.util.PSQLException: ERRORE: la relazione "password" non esiste
+  Posizione: 117
+	at org.postgresql.core.v3.QueryExecutorImpl.receiveErrorResponse(QueryExecutorImpl.java:2713) ~[postgresql-42.6.0.jar:42.6.0]
+	at org.postgresql.core.v3.QueryExecutorImpl.processResults(QueryExecutorImpl.java:2401) ~[postgresql-42.6.0.jar:42.6.0]
+	at org.postgresql.core.v3.QueryExecutorImpl.execute(QueryExecutorImpl.java:368) ~[postgresql-42.6.0.jar:42.6.0]
+	at org.postgresql.jdbc.PgStatement.executeInternal(PgStatement.java:498) ~[postgresql-42.6.0.jar:42.6.0]
+	at org.postgresql.jdbc.PgStatement.execute(PgStatement.java:415) ~[postgresql-42.6.0.jar:42.6.0]
+	at org.postgresql.jdbc.PgPreparedStatement.executeWithFlags(PgPreparedStatement.java:190) ~[postgresql-42.6.0.jar:42.6.0]
+	at org.postgresql.jdbc.PgPreparedStatement.executeQuery(PgPreparedStatement.java:134) ~[postgresql-42.6.0.jar:42.6.0]
+	at servlets.LoginServlet.isValidUser(LoginServlet.java:57) [classes/:?]
+	at servlets.LoginServlet.doPost(LoginServlet.java:37) [classes/:?]
+	at jakarta.servlet.http.HttpServlet.service(HttpServlet.java:590) [servlet-api.jar:6.0]
+	at jakarta.servlet.http.HttpServlet.service(HttpServlet.java:658) [servlet-api.jar:6.0]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:205) [catalina.jar:10.1.15]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:149) [catalina.jar:10.1.15]
+	at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:51) [tomcat-websocket.jar:10.1.15]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:174) [catalina.jar:10.1.15]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:149) [catalina.jar:10.1.15]
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:167) [catalina.jar:10.1.15]
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:90) [catalina.jar:10.1.15]
+	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:482) [catalina.jar:10.1.15]
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:115) [catalina.jar:10.1.15]
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:93) [catalina.jar:10.1.15]
+	at org.apache.catalina.valves.AbstractAccessLogValve.invoke(AbstractAccessLogValve.java:673) [catalina.jar:10.1.15]
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:74) [catalina.jar:10.1.15]
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:340) [catalina.jar:10.1.15]
+	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:391) [tomcat-coyote.jar:10.1.15]
+	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:63) [tomcat-coyote.jar:10.1.15]
+	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:896) [tomcat-coyote.jar:10.1.15]
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1744) [tomcat-coyote.jar:10.1.15]
+	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:52) [tomcat-coyote.jar:10.1.15]
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1191) [tomcat-util.jar:10.1.15]
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:659) [tomcat-util.jar:10.1.15]
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61) [tomcat-util.jar:10.1.15]
+	at java.lang.Thread.run(Thread.java:840) [?:?]
+2023-11-24 16:12:01,183 INFO  [DBLogger] Log4j initialized. Log file path: C:\Users\Utente\IdeaProjects\DatabaseConnection\src\main\webapp\logs\dbConnectionLogs.txt
+2023-11-24 16:12:09,186 INFO  [LoginServlet] Valid user found: null
+2023-11-24 16:15:07,813 INFO  [LoginServlet] Valid user found: nicolo@gmail.com
+2023-11-24 16:15:34,153 INFO  [LoginServlet] Valid user found: kekw
+2023-11-24 16:15:58,226 INFO  [LoginServlet] Valid user found: cracco@gmail.com
+2023-11-24 16:40:15,844 INFO  [DBLogger] Log4j initialized. Log file path: C:\Users\Utente\IdeaProjects\DatabaseConnection\src\main\webapp\logs\dbConnectionLogs.txt
+2023-11-24 18:07:16,857 INFO  [DBLogger] Log4j initialized. Log file path: C:\Users\Utente\IdeaProjects\DatabaseConnection\src\main\webapp\logs\dbConnectionLogs.txt
+2023-11-24 18:07:36,441 INFO  [LoginServlet] User with email: kekl is trying to login.
+2023-11-24 18:12:53,435 INFO  [DBLogger] Log4j initialized. Log file path: C:\Users\Utente\IdeaProjects\DatabaseConnection\src\main\webapp\logs\dbConnectionLogs.txt
+2023-11-24 18:13:06,263 INFO  [DBLogger] Log4j initialized. Log file path: C:\Users\Utente\IdeaProjects\DatabaseConnection\src\main\webapp\logs\dbConnectionLogs.txt
+2023-11-24 18:13:13,985 INFO  [LoginServlet] User with email: kekl is trying to login.
+2023-11-24 18:13:35,706 INFO  [LoginServlet] User with email: kekl is trying to login.
+2023-11-24 18:14:13,420 INFO  [LoginServlet] User with email: kekl is trying to login.
+2023-11-24 18:14:44,338 INFO  [LoginServlet] User with email: kekl is trying to login.
+2023-11-24 18:17:13,463 INFO  [DBLogger] Log4j initialized. Log file path: C:\Users\Utente\IdeaProjects\DatabaseConnection\src\main\webapp\logs\dbConnectionLogs.txt
+2023-11-24 18:17:19,711 INFO  [LoginServlet] User with email: kekl is trying to login.
+2023-11-24 18:20:44,753 INFO  [LoginServlet] User with email: kekl is trying to login.
+2023-11-24 18:22:00,756 INFO  [DBLogger] Log4j initialized. Log file path: C:\Users\Utente\IdeaProjects\DatabaseConnection\src\main\webapp\logs\dbConnectionLogs.txt
+2023-11-24 18:26:27,520 INFO  [LoginServlet] User with email: cracco@gmail.com is trying to login.
+2023-11-24 18:26:28,134 INFO  [LoginServlet] Valid user found: cracco@gmail.com
+2023-11-24 18:26:28,137 INFO  [LoginServlet] Forwarding login request to Index page. User with email: cracco@gmail.com login successful.
+2023-11-24 18:39:52,240 INFO  [LoginServlet] User with email: cracco@gmail.com is trying to login.
+2023-11-24 18:39:52,334 INFO  [LoginServlet] Valid user found: cracco@gmail.com
+2023-11-24 18:39:52,334 INFO  [LoginServlet] Forwarding login request to Index page. User with email: cracco@gmail.com login successful.
+2023-11-24 18:57:17,732 INFO  [LoginServlet] User with email: cracco@gmail.com is trying to login.
+2023-11-24 18:57:17,848 INFO  [LoginServlet] Valid user found: cracco@gmail.com
+2023-11-24 18:57:17,848 INFO  [LoginServlet] Forwarding login request to Index page. User with email: cracco@gmail.com login successful.
+2023-11-24 18:57:27,645 INFO  [UserServlet] Displaying users list.
+2023-11-24 19:00:40,893 INFO  [LoginServlet] User with email: cracco@gmail.com is trying to login.
+2023-11-24 19:00:40,971 INFO  [LoginServlet] Valid user found: cracco@gmail.com
+2023-11-24 19:00:40,971 INFO  [LoginServlet] Forwarding login request to Index page. User with email: cracco@gmail.com login successful.
+2023-11-24 19:00:42,146 INFO  [UserServlet] Displaying users list.
+2023-11-24 19:01:06,979 INFO  [UserServlet] Displaying users list.
+2023-11-24 19:01:19,551 INFO  [UserServlet] Displaying users list.
+2023-11-24 19:01:46,035 INFO  [UserServlet] Displaying users list.
+2023-11-24 19:02:40,401 INFO  [UserServlet] Displaying users list.
+2023-11-24 19:05:47,433 INFO  [UserServlet] Displaying users list.
+2023-11-24 19:07:48,383 INFO  [UserServlet] Displaying users list.
+2023-11-24 19:09:18,263 INFO  [UserServlet] Displaying users list.
+2023-11-24 19:10:39,389 INFO  [UserServlet] Displaying users list.
+2023-11-24 19:10:51,481 INFO  [UserServlet] Displaying users list.
+2023-11-24 19:13:25,532 INFO  [UserServlet] Displaying users list.
+2023-11-24 19:13:40,104 INFO  [UserServlet] Displaying users list.
+2023-11-24 19:13:54,807 INFO  [UserServlet] Displaying users list.
+2023-11-24 19:25:35,861 INFO  [DBLogger] Log4j initialized. Log file path: C:\Users\Utente\IdeaProjects\DatabaseConnection\src\main\webapp\logs\dbConnectionLogs.txt
+2023-11-24 19:25:41,780 INFO  [UserServlet] Displaying users list.
+2023-11-24 19:31:06,414 INFO  [DBLogger] Log4j initialized. Log file path: C:\Users\Utente\IdeaProjects\DatabaseConnection\src\main\webapp\logs\dbConnectionLogs.txt
+2023-11-24 19:31:16,135 INFO  [LoginServlet] User with email: cracco@gmail.com is trying to login.
+2023-11-24 19:31:16,798 INFO  [LoginServlet] Valid user found: cracco@gmail.com
+2023-11-24 19:31:16,800 INFO  [LoginServlet] Forwarding login request to Index page. User with email: cracco@gmail.com login successful.
+2023-11-24 19:31:18,158 INFO  [UserServlet] Displaying users list.

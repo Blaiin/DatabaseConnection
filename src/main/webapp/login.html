@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login Page</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: black !important;
+            color: black !important;
+            margin: 0;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+        }
+
+        .login-container {
+            background-color: #ff9900 !important;
+            color: black;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+
+        label {
+            display: block;
+            margin-bottom: 8px;
+        }
+
+        input {
+            width: 100%;
+            padding: 8px;
+            margin-bottom: 16px;
+            box-sizing: border-box;
+        }
+
+        button {
+            background-color: #4caf50;
+            color: white;
+            padding: 10px 15px;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background-color: #28752a;
+        }
+        button.register {
+            background-color: #3498db !important;
+            color: white;
+            padding: 10px 15px;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            margin-top: 10px;
+        }
+
+        button:hover {
+            background-color: #45a049 !important;
+        }
+
+        button.register:hover {
+            background-color: #2980b9;
+        }
+        .popup-overlay {
+            display: block;
+            position: fixed;
+            bottom: 20px;
+            left: 20px;
+            background-color: #ff9900; /* Orange background color */
+            padding: 10px;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+            color: black; /* Text color */
+            max-width: 200px; /* Maximum width of the pop-up */
+        }
+
+        .popup-content {
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 8px;
+            text-align: center;
+        }
+
+        .close-btn {
+            cursor: pointer;
+            color: #3498db;
+            font-weight: bold;
+        }
+    </style>
+    <body>
+    <div class="popup-overlay" id="popupOverlay">
+        <div class="popup-content">
+            <p>Donna calda a 500m da te!!</p>
+            <p class="close-btn" onclick="closePopup()">Close</p>
+        </div>
+    </div>
+    <div class="login-container">
+        <h2>Login</h2>
+        <form action="login" method="post">
+            <label for="email">Email:</label>
+            <input type="text" id="email" name="email" required>
+
+            <label for="password">Password:</label>
+            <input type="password" id="password" name="password" required>
+
+            <button class="login" type="submit">Login</button>
+
+            <!-- Add the Register button -->
+            <button class="login" type="submit">Register</button>
+        </form>
+    </div>
+    <script>
+        // Function to close the pop-up
+        function closePopup() {
+            document.getElementById('popupOverlay').style.display = 'none';
+        }
+    </script>
+    </body>
+    </html>
+
