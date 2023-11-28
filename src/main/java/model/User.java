@@ -21,7 +21,6 @@ public class User {
     private Integer age;
 
     public User() {
-
     }
 
     public User(String name, String surname, String phone, String email, Integer age) {

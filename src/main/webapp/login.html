@@ -17,7 +17,7 @@
         }
 
         .login-container {
-            background-color: #ff9900 !important;
+            background-color: #ff9900;
             color: black;
             padding: 20px;
             border-radius: 8px;
@@ -49,7 +49,7 @@
             background-color: #28752a;
         }
         button.register {
-            background-color: #3498db !important;
+            background-color: #211ca6 !important;
             color: white;
             padding: 10px 15px;
             border: none;
@@ -58,13 +58,10 @@
             margin-top: 10px;
         }
 
-        button:hover {
-            background-color: #45a049 !important;
+        button.register:hover {
+            background-color: #120f5e !important;
         }
 
-        button.register:hover {
-            background-color: #2980b9;
-        }
         .popup-overlay {
             display: block;
             position: fixed;
@@ -110,8 +107,13 @@
             <button class="login" type="submit">Login</button>
 
             <!-- Add the Register button -->
-            <button class="login" type="submit">Register</button>
         </form>
+        <p>
+            <label>Don't have an account yet?</label>
+            <a href="/DatabaseConnection/register">
+                <button class="register" type="button">Register</button>
+            </a>
+        </p>
     </div>
     <script>
         // Function to close the pop-up

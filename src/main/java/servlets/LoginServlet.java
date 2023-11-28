@@ -31,20 +31,23 @@ public class LoginServlet extends HttpServlet {
 
     protected void doPost(HttpServletRequest request, HttpServletResponse response)
             throws IOException, ServletException {
-        String email = request.getParameter("email");
-        String password = request.getParameter("password");
-        LOGGER.info("User with email: {} is trying to login.", email);
-        System.out.printf("Email: %s. \n", email);
-        if (isValidUser(email, password)){
-            System.out.println("Login successful, Forwarding request");
-            LOGGER.info("Forwarding login request to Index page. User with email: {} login successful.", email);
-            doGet(request, response);
-        } else {
-            request.setAttribute("errorMessage", "Invalid email or password");
-            response.setStatus(HttpServletResponse.SC_UNAUTHORIZED); // 401 Unauthorized
-            RequestDispatcher dispatcher = request.getRequestDispatcher("/error.jsp");
-            dispatcher.forward(request, response);
-        }
+        String action = request.getParameter("action");
+        System.out.println(action);
+            String email = request.getParameter("email");
+            String password = request.getParameter("password");
+            LOGGER.info("User with email: {} is trying to login.", email);
+            System.out.printf("Email: %s. \n", email);
+            if (isValidUser(email, password)){
+                System.out.println("Login successful, Forwarding request");
+                LOGGER.info("Forwarding login request to Index page. User with email: {} login successful.", email);
+                doGet(request, response);
+            } else {
+                request.setAttribute("errorMessage", "Invalid email or password");
+                response.setStatus(HttpServletResponse.SC_UNAUTHORIZED); // 401 Unauthorized
+                RequestDispatcher dispatcher = request.getRequestDispatcher("/error.jsp");
+                dispatcher.forward(request, response);
+            }
+
     }
     private boolean isValidUser(String email, String password) {
 
