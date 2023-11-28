@@ -11,10 +11,6 @@
     <servlet-class>servlets.UserServlet</servlet-class>
   </servlet>
   <servlet>
-    <servlet-name>AddUserServlet</servlet-name>
-    <servlet-class>servlets.AddUserServlet</servlet-class>
-  </servlet>
-  <servlet>
     <servlet-name>ModifyUserServlet</servlet-name>
     <servlet-class>servlets.ModifyUserServlet</servlet-class>
   </servlet>
@@ -43,10 +39,6 @@
   <servlet-mapping>
     <servlet-name>UserServlet</servlet-name>
     <url-pattern>/userList</url-pattern>
-  </servlet-mapping>
-  <servlet-mapping>
-    <servlet-name>AddUserServlet</servlet-name>
-    <url-pattern>/addUser</url-pattern>
   </servlet-mapping>
   <servlet-mapping>
     <servlet-name>ModifyUserServlet</servlet-name>

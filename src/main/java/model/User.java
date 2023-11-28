@@ -1,5 +1,6 @@
 package model;
 
+import jakarta.servlet.http.HttpServletRequest;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
@@ -40,6 +41,15 @@ public class User {
         this.age = age;
     }
 
+    public static User mapParamsToUser(HttpServletRequest request) {
+        String name = request.getParameter("name");
+        String surname = request.getParameter("surname");
+        String phone = request.getParameter("phone");
+        String email = request.getParameter("email");
+        Integer age = Integer.valueOf(request.getParameter("age"));
+        return new User(name, surname, phone, email, age);
+    }
+
     public static List<User> mapResultSetToUserList(ResultSet resultSet) throws SQLException {
         List<User> userList = new ArrayList<>();
 
@@ -67,10 +77,31 @@ public class User {
         return user;
     }
 
+    public static User findUserByPhoneAndEmail(String phone, String email) {
+        try (Connection connection = DatabaseConn.getConnection();
+             PreparedStatement preparedStatement = connection
+                     .prepareStatement(SQLQueries.SELECT_FROM_PHONE_AND_EMAIL_QUERY)) {
+            preparedStatement.setString(1, phone);
+            preparedStatement.setString(2, email);
+            try (ResultSet resultSet = preparedStatement.executeQuery()) {
+                if (resultSet.next()) {
+                    System.out.println(resultSet.getInt("id"));
+                    logger.info("User {} {} selected.", resultSet.getString("name"),
+                            resultSet.getString("surname"));
+                    return mapResultSetToUser(resultSet);
+                }
+            }
+
+        } catch (SQLException e) {
+            logger.error("Cannot connect to database.", e);
+        }
+        return null;
+    }
+
     public static User findUserByName(String name) {
         try (Connection connection = DatabaseConn.getConnection();
              PreparedStatement preparedStatement = connection
-                     .prepareStatement("select * from users where name = ?")) {
+                     .prepareStatement(SQLQueries.SELECT_FROM_NAME_QUERY)) {
 
             preparedStatement.setString(1, name);
             System.out.println(preparedStatement);

@@ -237,3 +237,62 @@ User -> [id=null, name=Andrei, surname=Fragolino, phone=3224433627, email=fragol
 2023-11-27 23:34:39,917 INFO  [DBLogger] Log4j initialized. Log file path: C:\Users\Utente\IdeaProjects\DatabaseConnection\src\main\webapp\logs\dbConnectionLogs.txt
 2023-11-27 23:35:23,603 INFO  [RegisterServlet] Registered user 
 User -> [id=null, name=Jhonny, surname=Bravo, phone=3111111210, email=jhonny@gmail.it, age=37] successfully.
+2023-11-28 17:55:04,906 INFO  [DBLogger] Log4j initialized. Log file path: C:\Users\Utente\IdeaProjects\DatabaseConnection\src\main\webapp\logs\dbConnectionLogs.txt
+2023-11-28 17:59:55,866 INFO  [DBUtils] User 
+User -> [id=null, name=Andrea, surname=Dimitri, phone=3902903860, email=dimitri@yahoo.it, age=53] registered successfully.
+2023-11-28 17:59:56,004 ERROR [User] Cannot connect to database.
+org.postgresql.util.PSQLException: ERRORE: la colonna "phone" non esiste
+  Posizione: 26
+	at org.postgresql.core.v3.QueryExecutorImpl.receiveErrorResponse(QueryExecutorImpl.java:2713) ~[postgresql-42.6.0.jar:42.6.0]
+	at org.postgresql.core.v3.QueryExecutorImpl.processResults(QueryExecutorImpl.java:2401) ~[postgresql-42.6.0.jar:42.6.0]
+	at org.postgresql.core.v3.QueryExecutorImpl.execute(QueryExecutorImpl.java:368) ~[postgresql-42.6.0.jar:42.6.0]
+	at org.postgresql.jdbc.PgStatement.executeInternal(PgStatement.java:498) ~[postgresql-42.6.0.jar:42.6.0]
+	at org.postgresql.jdbc.PgStatement.execute(PgStatement.java:415) ~[postgresql-42.6.0.jar:42.6.0]
+	at org.postgresql.jdbc.PgPreparedStatement.executeWithFlags(PgPreparedStatement.java:190) ~[postgresql-42.6.0.jar:42.6.0]
+	at org.postgresql.jdbc.PgPreparedStatement.executeQuery(PgPreparedStatement.java:134) ~[postgresql-42.6.0.jar:42.6.0]
+	at model.User.findUserByPhoneAndEmail(User.java:86) [classes/:?]
+	at model.DBUtils.registerPasswordForUser(DBUtils.java:16) [classes/:?]
+	at servlets.RegisterServlet.doPost(RegisterServlet.java:40) [classes/:?]
+	at jakarta.servlet.http.HttpServlet.service(HttpServlet.java:590) [servlet-api.jar:6.0]
+	at jakarta.servlet.http.HttpServlet.service(HttpServlet.java:658) [servlet-api.jar:6.0]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:205) [catalina.jar:10.1.15]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:149) [catalina.jar:10.1.15]
+	at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:51) [tomcat-websocket.jar:10.1.15]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:174) [catalina.jar:10.1.15]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:149) [catalina.jar:10.1.15]
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:167) [catalina.jar:10.1.15]
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:90) [catalina.jar:10.1.15]
+	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:482) [catalina.jar:10.1.15]
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:115) [catalina.jar:10.1.15]
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:93) [catalina.jar:10.1.15]
+	at org.apache.catalina.valves.AbstractAccessLogValve.invoke(AbstractAccessLogValve.java:673) [catalina.jar:10.1.15]
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:74) [catalina.jar:10.1.15]
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:340) [catalina.jar:10.1.15]
+	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:391) [tomcat-coyote.jar:10.1.15]
+	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:63) [tomcat-coyote.jar:10.1.15]
+	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:896) [tomcat-coyote.jar:10.1.15]
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1744) [tomcat-coyote.jar:10.1.15]
+	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:52) [tomcat-coyote.jar:10.1.15]
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1191) [tomcat-util.jar:10.1.15]
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:659) [tomcat-util.jar:10.1.15]
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61) [tomcat-util.jar:10.1.15]
+	at java.lang.Thread.run(Thread.java:840) [?:?]
+2023-11-28 18:00:07,722 INFO  [LoginServlet] User with email: dimitri@yahoo.it is trying to login.
+2023-11-28 18:00:07,810 INFO  [LoginServlet] Valid user found: dimitri@yahoo.it
+2023-11-28 18:19:01,722 INFO  [DBLogger] Log4j initialized. Log file path: C:\Users\Utente\IdeaProjects\DatabaseConnection\src\main\webapp\logs\dbConnectionLogs.txt
+2023-11-28 18:20:24,484 INFO  [DBUtils] User 
+User -> [id=null, name=Daniele, surname=Miseria, phone=3990908077, email=daniele@gmail.com, age=28] registered successfully.
+2023-11-28 18:20:24,642 INFO  [User] User Daniele Miseria selected.
+2023-11-28 18:20:24,746 INFO  [DBUtils] Password for user: daniele@gmail.com registered successfully.
+2023-11-28 18:20:36,135 INFO  [LoginServlet] User with email: daniele@gmail.com is trying to login.
+2023-11-28 18:20:36,218 INFO  [LoginServlet] Valid user found: daniele@gmail.com
+2023-11-28 18:20:36,218 INFO  [LoginServlet] Forwarding login request to Index page. User with email: daniele@gmail.com login successful.
+2023-11-28 18:21:43,509 INFO  [DBUtils] User 
+User -> [id=null, name=Stefano, surname=Tortora, phone=3089647382, email=stefano@yahoo.it, age=29] registered successfully.
+2023-11-28 18:21:43,590 INFO  [User] User Stefano Tortora selected.
+2023-11-28 18:21:43,677 INFO  [DBUtils] Password for user: stefano@yahoo.it registered successfully.
+2023-11-28 18:21:50,104 INFO  [LoginServlet] User with email: stefano@yahoo.it is trying to login.
+2023-11-28 18:21:50,190 INFO  [LoginServlet] Valid user found: stefano@yahoo.it
+2023-11-28 18:21:50,190 INFO  [LoginServlet] Forwarding login request to Index page. User with email: stefano@yahoo.it login successful.
+2023-11-28 18:24:46,983 INFO  [UserServlet] Displaying users list.
+2023-11-28 18:27:06,333 INFO  [DBLogger] Log4j initialized. Log file path: C:\Users\Utente\IdeaProjects\DatabaseConnection\src\main\webapp\logs\dbConnectionLogs.txt
