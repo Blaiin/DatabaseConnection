@@ -2,7 +2,6 @@ package model;
 
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
-import servlets.RegisterServlet;
 
 import java.sql.Connection;
 import java.sql.PreparedStatement;
@@ -49,9 +48,9 @@ public class DBUtils {
                 int rowsAffected = preparedStatement.executeUpdate();
 
                 if (rowsAffected > 0) {
-                    logger.info("User {} registered successfully.", userToRegister);
+                    logger.info("User {} registered successfully.", userToRegister.getEmail());
                 } else {
-                    logger.warn("Failed to register user.");
+                    logger.warn("Failed to register user with email: {}.", userToRegister.getEmail());
                 }
             }
         } catch (SQLException e) {
