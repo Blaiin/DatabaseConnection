@@ -10,6 +10,7 @@ import jakarta.servlet.ServletException;
 import jakarta.servlet.http.HttpServlet;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
+import model.DBUtils;
 import model.DatabaseConn;
 
 import model.User;
@@ -33,7 +34,7 @@ public class DeleteUserServlet extends HttpServlet{
     protected void doPost(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
         String searchName = request.getParameter("searchName");
-        User foundUser = User.findUserByName(searchName);
+        User foundUser = DBUtils.findUserByName(searchName);
         if (foundUser != null) {
             request.setAttribute("foundUser", foundUser);
             RequestDispatcher dispatcher = request.getRequestDispatcher("/deleteUser.jsp");

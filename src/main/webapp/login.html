@@ -61,52 +61,17 @@
         button.register:hover {
             background-color: #120f5e !important;
         }
-
-        .popup-overlay {
-            display: block;
-            position: fixed;
-            bottom: 20px;
-            left: 20px;
-            background-color: #ff9900; /* Orange background color */
-            padding: 10px;
-            border-radius: 8px;
-            box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
-            color: black; /* Text color */
-            max-width: 200px; /* Maximum width of the pop-up */
-        }
-
-        .popup-content {
-            background-color: #fff;
-            padding: 20px;
-            border-radius: 8px;
-            text-align: center;
-        }
-
-        .close-btn {
-            cursor: pointer;
-            color: #3498db;
-            font-weight: bold;
-        }
     </style>
     <body>
-    <div class="popup-overlay" id="popupOverlay">
-        <div class="popup-content">
-            <p>Donna calda a 500m da te!!</p>
-            <p class="close-btn" onclick="closePopup()">Close</p>
-        </div>
-    </div>
     <div class="login-container">
         <h2>Login</h2>
-        <form action="login" method="post">
+        <form action="login" method="post" onsubmit="validateForm()">
             <label for="email">Email:</label>
             <input type="text" id="email" name="email" required>
-
             <label for="password">Password:</label>
             <input type="password" id="password" name="password" required>
-
+            <label id="errorMessageLabel" style="color: red; display: none;"></label>
             <button class="login" type="submit">Login</button>
-
-            <!-- Add the Register button -->
         </form>
         <p>
             <label>Don't have an account yet?</label>
@@ -116,9 +81,21 @@
         </p>
     </div>
     <script>
-        // Function to close the pop-up
-        function closePopup() {
-            document.getElementById('popupOverlay').style.display = 'none';
+        function validateForm() {
+            var errorMessage = "Invalid email or password"; // Set the error message here
+            var errorMessageLabel = document.getElementById('errorMessageLabel');
+
+            // Check if errorMessage is not null or empty
+            if (errorMessage && errorMessage.trim() !== "") {
+                errorMessageLabel.innerHTML = errorMessage;
+                errorMessageLabel.style.display = 'block'; // Show the label
+                return false; // Prevent form submission
+            } else {
+                // Clear the label and hide it
+                errorMessageLabel.innerHTML = "";
+                errorMessageLabel.style.display = 'none';
+                return true; // Allow form submission
+            }
         }
     </script>
     </body>

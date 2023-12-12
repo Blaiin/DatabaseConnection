@@ -5,16 +5,11 @@ import jakarta.servlet.http.HttpServlet;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
 import model.DBUtils;
-import model.DatabaseConn;
-import model.SQLQueries;
 import model.User;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
 import java.io.IOException;
-import java.sql.Connection;
-import java.sql.PreparedStatement;
-import java.sql.SQLException;
 
 public class RegisterServlet extends HttpServlet {
     private static final long serialVersionUID = 1L;
@@ -25,20 +20,29 @@ public class RegisterServlet extends HttpServlet {
     }
     protected void doPost(HttpServletRequest request, HttpServletResponse response)
             throws IOException, ServletException {
-            String phone = request.getParameter("phone");
-            String email = request.getParameter("email");
-            String password = request.getParameter("password");
-        if (DBUtils.checkIfPhoneAlreadyInUse(phone)) {
-            request.setAttribute("errorMessagePhone", "Phone number already in use.");
-            request.getRequestDispatcher("/register.jsp").forward(request, response);
-        } else if (DBUtils.checkIfEmailAlreadyInUse(email)) {
-            request.setAttribute("errorMessageEmail", "Email already in use.");
-            request.getRequestDispatcher("/register.jsp").forward(request, response);
-        } else {
-                User userToRegister = User.mapParamsToUser(request);
+
+        User userToRegister = User.mapParamsToUser(request);
+        String password = request.getParameter("password");
+        String confirmPassword = request.getParameter("confirm_password");
+
+        if (password.equals(confirmPassword)) {
+            if (DBUtils.checkIfPhoneAlreadyInUse(userToRegister.getPhone())) {
+                request.setAttribute("errorMessagePhone", "Phone number already in use.");
+                logger.error("Phone already in use: {}.", userToRegister.getPhone());
+                request.getRequestDispatcher("/register.jsp").forward(request, response);
+            } else if (DBUtils.checkIfEmailAlreadyInUse(userToRegister.getEmail())) {
+                request.setAttribute("errorMessageEmail", "Email already in use.");
+                logger.error("Email already in use: {}.", userToRegister.getEmail());
+                request.getRequestDispatcher("/register.jsp").forward(request, response);
+            } else {
                 DBUtils.registerUser(userToRegister);
-                DBUtils.registerPasswordForUser(password, phone, email);
+                DBUtils.registerPasswordForUser(password, userToRegister.getPhone(), userToRegister.getEmail());
                 response.sendRedirect("login.html");
+            }
+        } else {
+            request.setAttribute("errorMessagePassword", "Password not confirmed correctly.");
+            logger.error("Password incorrectly confirmed.");
+            request.getRequestDispatcher("/register.jsp").forward(request, response);
         }
     }
 

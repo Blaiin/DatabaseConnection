@@ -77,48 +77,6 @@ public class User {
         return user;
     }
 
-    public static User findUserByPhoneAndEmail(String phone, String email) {
-        try (Connection connection = DatabaseConn.getConnection();
-             PreparedStatement preparedStatement = connection
-                     .prepareStatement(SQLQueries.SELECT_FROM_PHONE_AND_EMAIL_QUERY)) {
-            preparedStatement.setString(1, phone);
-            preparedStatement.setString(2, email);
-            try (ResultSet resultSet = preparedStatement.executeQuery()) {
-                if (resultSet.next()) {
-                    System.out.println(resultSet.getInt("id"));
-                    logger.info("User {} {} selected.", resultSet.getString("name"),
-                            resultSet.getString("surname"));
-                    return mapResultSetToUser(resultSet);
-                }
-            }
-
-        } catch (SQLException e) {
-            logger.error("Cannot connect to database.", e);
-        }
-        return null;
-    }
-
-    public static User findUserByName(String name) {
-        try (Connection connection = DatabaseConn.getConnection();
-             PreparedStatement preparedStatement = connection
-                     .prepareStatement(SQLQueries.SELECT_FROM_NAME_QUERY)) {
-
-            preparedStatement.setString(1, name);
-            System.out.println(preparedStatement);
-            try (ResultSet resultSet = preparedStatement.executeQuery()) {
-                if (resultSet.next()) {
-                    System.out.println(resultSet.getString("name"));
-                    logger.info("User {} {} selected.", resultSet.getString("name"), resultSet.getString("surname"));
-                    return mapResultSetToUser(resultSet);
-                }
-            }
-
-        } catch (SQLException e) {
-            logger.error("Cannot connect to database.", e);
-        }
-        return null;
-    }
-
     public static boolean modifyUser(Integer foundUserId, User modifiedUser) {
         try (Connection connection = DatabaseConn.getConnection();
              PreparedStatement preparedStatement = connection.prepareStatement(
@@ -134,8 +92,8 @@ public class User {
 
             return rowsAffected > 0;
         } catch (SQLException e) {
-            e.printStackTrace();
             logger.error("Error connecting to database.", e);
+            System.out.printf("SQLException: %s", e);
         }
         return false;
     }
@@ -151,8 +109,8 @@ public class User {
             int rowsAffected = preparedStatement.executeUpdate();
             return rowsAffected > 0;
         } catch (SQLException e) {
-            e.printStackTrace();
             logger.error("Error connecting to database.", e);
+            System.out.printf("SQLException: %s", e);
         }
         return false;
     }

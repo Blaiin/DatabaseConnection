@@ -20,9 +20,8 @@ import java.util.regex.Pattern;
 public class LoginServlet extends HttpServlet {
     private static final long serialVersionUID = 1L;
     private static final Logger LOGGER = LogManager.getLogger(LoginServlet.class);
-    private static final String RFC_REGEX = "^[a-zA-Z0-9_!#$%&'*+/=?`{|}~^.-]+@[a-zA-Z0-9.-]+$";
+    private static final String RFC_EMAIL_REGEX = "^[a-zA-Z0-9_!#$%&'*+/=?`{|}~^.-]+@[a-zA-Z0-9.-]+$";
 
-    @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
         RequestDispatcher dispatcher = request.getRequestDispatcher("/index.html");
@@ -31,24 +30,18 @@ public class LoginServlet extends HttpServlet {
 
     protected void doPost(HttpServletRequest request, HttpServletResponse response)
             throws IOException, ServletException {
-        String action = request.getParameter("action");
-        System.out.println(action);
             String email = request.getParameter("email");
             String password = request.getParameter("password");
             LOGGER.info("User with email: {} is trying to login.", email);
-            System.out.printf("Email: %s. \n", email);
+            System.out.printf("User with email: %s is trying to login.\n", email);
             if (isValidUser(email, password)){
                 System.out.println("Login successful, Forwarding request");
-                LOGGER.info("Forwarding login request to Index page. User with email: {} login successful.", email);
+                LOGGER.info("User with email: {} login successful. Forwarding login request to Index page. ", email);
                 doGet(request, response);
-            } else {
-                request.setAttribute("errorMessage", "Invalid email or password");
-                response.setStatus(HttpServletResponse.SC_UNAUTHORIZED); // 401 Unauthorized
-                RequestDispatcher dispatcher = request.getRequestDispatcher("/error.jsp");
-                dispatcher.forward(request, response);
             }
 
     }
+
     private boolean isValidUser(String email, String password) {
 
         if (!isValidEmail(email)) {
@@ -75,16 +68,16 @@ public class LoginServlet extends HttpServlet {
 
         } catch (SQLException e) {
             LOGGER.error("Error connecting to database.", e);
-            e.printStackTrace();
+            System.out.printf("SQLException: %s", e);
         } catch (Exception e) {
             LOGGER.error("Error: ", e);
-            e.printStackTrace();
+            System.out.printf("SQLException: %s", e);
         }
 
         return false;
     }
     private boolean isValidEmail(String email) {
-        Pattern pattern = Pattern.compile(RFC_REGEX);
+        Pattern pattern = Pattern.compile(RFC_EMAIL_REGEX);
         Matcher matcher = pattern.matcher(email);
         return matcher.matches();
     }

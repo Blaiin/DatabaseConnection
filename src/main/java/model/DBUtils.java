@@ -1,7 +1,9 @@
 package model;
 
+import jakarta.validation.constraints.NotNull;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
+import org.mindrot.jbcrypt.BCrypt;
 
 import java.sql.Connection;
 import java.sql.PreparedStatement;
@@ -11,8 +13,8 @@ import java.sql.SQLException;
 public class DBUtils {
     private static final Logger logger = LogManager.getLogger(DBUtils.class);
 
-    public static void registerPasswordForUser(String password, String phone, String email) {
-        User user = User.findUserByPhoneAndEmail(phone, email);
+    public static void registerPasswordForUser(@NotNull String password, @NotNull String phone, @NotNull String email) {
+        User user = findUserByPhoneAndEmail(phone, email);
         if(user != null) {
             try (Connection connection = DatabaseConn.getConnection()) {
                 try (PreparedStatement preparedStatement = connection.prepareStatement(SQLQueries.INSERT_PASSWORD_FOR_USER)) {
@@ -31,12 +33,12 @@ public class DBUtils {
                 }
             } catch (SQLException e) {
                 logger.error("Failed to register password for {} to database. {}", user.getEmail(), e);
-                e.printStackTrace();
+                System.out.printf("SQLException: %s", e);
             }
         }
     }
 
-    public static void registerUser(User userToRegister) {
+    public static void registerUser(@NotNull User userToRegister) {
         try (Connection connection = DatabaseConn.getConnection()) {
             try (PreparedStatement preparedStatement = connection.prepareStatement(SQLQueries.INSERT_QUERY)) {
                 preparedStatement.setString(1, userToRegister.getName());
@@ -54,12 +56,54 @@ public class DBUtils {
                 }
             }
         } catch (SQLException e) {
-            e.printStackTrace();
             logger.error("Failed to register user to database", e);
+            System.out.printf("SQLException: %s", e);
         }
     }
 
-    public static boolean checkIfPhoneAlreadyInUse(String phone) {
+    public static User findUserByPhoneAndEmail(@NotNull String phone, @NotNull String email) {
+        try (Connection connection = DatabaseConn.getConnection();
+             PreparedStatement preparedStatement = connection
+                     .prepareStatement(SQLQueries.SELECT_FROM_PHONE_AND_EMAIL_QUERY)) {
+            preparedStatement.setString(1, phone);
+            preparedStatement.setString(2, email);
+            try (ResultSet resultSet = preparedStatement.executeQuery()) {
+                if (resultSet.next()) {
+                    System.out.println(resultSet.getInt("id"));
+                    logger.info("User {} {} selected.", resultSet.getString("name"),
+                            resultSet.getString("surname"));
+                    return User.mapResultSetToUser(resultSet);
+                }
+            }
+
+        } catch (SQLException e) {
+            logger.error("Cannot connect to database.", e);
+        }
+        return null;
+    }
+
+    public static User findUserByName(@NotNull String name) {
+        try (Connection connection = DatabaseConn.getConnection();
+             PreparedStatement preparedStatement = connection
+                     .prepareStatement(SQLQueries.SELECT_FROM_NAME_QUERY)) {
+
+            preparedStatement.setString(1, name);
+            System.out.println(preparedStatement);
+            try (ResultSet resultSet = preparedStatement.executeQuery()) {
+                if (resultSet.next()) {
+                    System.out.println(resultSet.getString("name"));
+                    logger.info("User {} {} selected.", resultSet.getString("name"), resultSet.getString("surname"));
+                    return User.mapResultSetToUser(resultSet);
+                }
+            }
+
+        } catch (SQLException e) {
+            logger.error("Cannot connect to database.", e);
+        }
+        return null;
+    }
+
+    public static boolean checkIfPhoneAlreadyInUse(@NotNull String phone) {
         try (Connection connection = DatabaseConn.getConnection()) {
             try (PreparedStatement statement = connection.prepareStatement(SQLQueries.CHECK_PHONE_QUERY)) {
                 statement.setString(1, phone);
@@ -72,11 +116,11 @@ public class DBUtils {
             }
         } catch (SQLException e) {
             logger.error("Error connecting to database", e);
-            e.printStackTrace();
+            System.out.printf("SQLException: %s", e);
         }
         return true;
     }
-    public static boolean checkIfEmailAlreadyInUse(String email) {
+    public static boolean checkIfEmailAlreadyInUse(@NotNull String email) {
         try (Connection connection = DatabaseConn.getConnection()) {
             try (PreparedStatement statement = connection.prepareStatement(SQLQueries.CHECK_EMAIL_QUERY)) {
                 statement.setString(1, email);
@@ -89,8 +133,13 @@ public class DBUtils {
             }
         } catch (SQLException e) {
             logger.error("Error connecting to database", e);
-            e.printStackTrace();
+            System.out.printf("SQLException: %s", e);
         }
         return true;
+    }
+
+    public static String hashPassword(@NotNull String password) {
+        String salt = BCrypt.gensalt();
+        return BCrypt.hashpw(password, salt);
     }
 }

@@ -82,15 +82,25 @@
             <label for="email">Email:</label>
             <input type="email" id="email" name="email" required><br>
 
-            <!-- Age -->
+            <!-- Age
             <label for="age">Age:</label>
-            <input type="number" id="age" name="age" required><br>
+            <input type="number" id="age" name="age" required><br> -->
+            <label for="birthdate">Birthdate:</label>
+            <input type="date" id="birthdate" name="birthdate" required><br>
+
 
             <!-- Password -->
             <label for="password">Password:</label>
             <input type="password" id="password" name="password" required><br>
 
+            <!-- Password -->
+            <label for="confirm_password">Confirm Password:</label>
+            <input type="password" id="confirm_password" name="confirm_password" required><br>
+
             <br>
+            <c:if test="${not empty errorMessagePassword}">
+                <p style="color: red;">${errorMessagePassword}</p>
+            </c:if>
             <c:if test="${not empty errorMessagePhone}">
                 <p style="color: red;">${errorMessagePhone}</p>
             </c:if>

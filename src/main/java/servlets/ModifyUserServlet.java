@@ -7,6 +7,7 @@ import jakarta.servlet.ServletException;
 import jakarta.servlet.http.HttpServlet;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
+import model.DBUtils;
 import model.User;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
@@ -23,7 +24,7 @@ public class ModifyUserServlet extends HttpServlet{
             throws ServletException, IOException {
         // Handle searching for a user and displaying details for modification
         String searchName = request.getParameter("searchName");
-        User foundUser = User.findUserByName(searchName);
+        User foundUser = DBUtils.findUserByName(searchName);
 
         // Set foundUser to null when no user is found
         request.setAttribute("foundUser", foundUser);
